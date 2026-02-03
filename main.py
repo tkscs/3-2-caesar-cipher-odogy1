@@ -6,18 +6,48 @@ alphabet = string.ascii_lowercase
 
 
 # You can look up the index of a letter in the alphabet like this:
-index = alphabet.index("a")
-print(f"position of 'a' in the alphabet: {index}")
+choice = input("Do you want to encrypt or decrypt?(Encrypt/Decrypt/IDK my number) ")
 
+if choice == "Encrypt":
+    plaintext = input("Write your message here: ")
+    cra = input("Input a number: ")
+    numcra = int(cra)
 
-plaintext = "This is a secret message."
+    # Initialize your ciphertext an empty string
+    ciphertext = ""
+    for character in plaintext:
+        number = ord(character)
+        number = number + numcra
+        encrypted_character = chr(number) # CHANGE THIS!
+        ciphertext += encrypted_character
+    print(f"{ciphertext = }")
+elif choice == "Decrypt":
+    plaintext = input("Write your message here: ")
+    cra = input("Input your number: ")
+    numcra = int(cra)
 
-# Initialize your ciphertext an empty string
-ciphertext = ""
-for character in plaintext:
-    # do something to the character to encrypt it
-    # YOUR CODE HERE
-    encrypted_character = "a" # CHANGE THIS!
-    ciphertext += encrypted_character
+    # Initialize your ciphertext an empty string
+    ciphertext = ""
+    for character in plaintext:
+        number = ord(character)
+        number = number - numcra
+        encrypted_character = chr(number) # CHANGE THIS!
+        ciphertext += encrypted_character
+    print(f"{ciphertext = }")
+elif choice == "IDK my number":
+    plaintext = input("Write your message here: ")
+    cra = input("Input your minimum number: ")
+    cra1 = input("Input your maximum number: ")
+    numcraz = int(cra)
+    numcra1 = int(cra1)
+    numcra1 = numcra1 + 1
 
-print(f"{ciphertext = }")
+    # Initialize your ciphertext an empty string
+    for numcra in range(numcraz, numcra1):
+        ciphertext = ""
+        for character in plaintext:
+            number = ord(character)
+            number = number - numcra
+            encrypted_character = chr(number) # CHANGE THIS!
+            ciphertext += encrypted_character
+        print(f"{ciphertext = }")
