@@ -6,7 +6,7 @@ alphabet = string.ascii_lowercase
 
 
 # You can look up the index of a letter in the alphabet like this:
-choice = input("Do you want to encrypt or decrypt?(Encrypt/Decrypt/IDK my number) ")
+choice = input("Do you want to encrypt, decrypt or did you forget your number?(Encrypt/Decrypt/IDK my number) ")
 
 if choice == "Encrypt":
     plaintext = input("Write your message here: ")
